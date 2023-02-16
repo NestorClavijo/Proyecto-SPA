@@ -1,0 +1,15 @@
+<h2>Lista de Canciones</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Genero</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cancion of canciones" >
+            <td>{{cancion.nombre_cancion}}</td>
+            <td>{{cancion.album.genero}}</td>
+        </tr>
+    </tbody>
+</table>

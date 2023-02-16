@@ -1,0 +1,19 @@
+<h2>Lista de Albums</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Genero</th>
+            <th>Discografica</th>
+            <th>fecha de publicacion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let album of albums" >
+            <td>{{album.nombre_album}}</td>
+            <td>{{album.genero}}</td>
+            <td>{{album.discografica}}</td>
+            <td>{{album.fecha_public}}</td>
+        </tr>
+    </tbody>
+</table>

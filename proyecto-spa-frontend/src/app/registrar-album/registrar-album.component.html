@@ -1,0 +1,28 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Registro de Album</h3>
+    <form (ngSubmit)="albumSubmit()">
+        <div class="form-group p-2 m-2">
+            
+            <label for="nombre">Nombre : </label>
+            <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)] = "album.nombre_album">
+
+            <label for="nacionalidad">Genero : </label>
+            <input type="text" class="form-control" name="genero" id="genero" [(ngModel)] = "album.genero">
+
+            <label for="religion">Discografica : </label>
+            <input type="text" class="form-control" name="discografica" id="discografica" [(ngModel)] = "album.discografica">
+
+            <label for="fecha_nac">Fecha de Publicacion : </label>
+            <input type="date" class="form-control" name="fecha_public" id="fecha_public" [(ngModel)] = "album.fecha_public">
+
+            <label for="artista">Artista : </label>
+            <select class="form-control" [(ngModel)] = "album.artista">
+                <option [value]="artista" *ngFor="let artista of artistas">{{artista.nombre}}</option>
+            </select>
+            
+        </div>
+
+        <button class="btn btn-success m-3">Guardar</button>
+
+    </form>
+</div>

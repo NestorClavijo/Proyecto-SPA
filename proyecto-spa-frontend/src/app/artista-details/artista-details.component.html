@@ -1,0 +1,18 @@
+
+<div style="margin:auto">
+    <h3>Mas Informacion del Artista</h3>
+
+    <div class="card" style="width: 20rem;">
+        <div class="card-body">
+        <h5 class="card-title">{{artista.nombre}}</h5>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">Nacionalidad: {{artista.nacionalidad}}</li>
+        <li class="list-group-item">Religion: {{artista.religion}}</li>
+        <li class="list-group-item">Fecha de nacimiento: {{artista.fecha_nac}}</li>
+        </ul>
+        <div class="card-body">
+        <button (click)= "regresar()"class="btn btn-secondary" type="submit">Regresar</button>
+
+        </div>
+    </div>
+</div>

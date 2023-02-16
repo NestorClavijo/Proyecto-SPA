@@ -1,0 +1,55 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Registro de Artista</h3>
+    <form (ngSubmit)="artistaSubmit()" #artistaForm = "ngForm">
+        <div class="form-group p-2 m-2">
+            
+            <div class="form-group">
+                <label for="nombre">Nombre : </label>
+                <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)] = "artista.nombre" required minlength="4" maxlength="60" #nombre = "ngModel">
+                <div class="alert alert-danger" *ngif="nombre.invalid && (nombre.dirty || nombre.touched)">
+                    <div *ngif = "nombre.errors.required">
+                        Digite el nombre 
+                    </div>
+                    <div *ngif = "nombre.errors.minlength || nombre.errors.maxlength">
+                        El nombre tiene un tamaño incorrecto 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="nacionalidad">Nacionalidad : </label>
+                <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" [(ngModel)] = "artista.nacionalidad" required minlength="4" maxlength="60" #nacionalidad = "ngModel">
+                <div class="alert alert-danger" *ngif="nacionalidad.invalid && (nacionalidad.dirty || nacionalidad.touched)">
+                    <div *ngif = "nacionalidad.errors.required">
+                        Digite la nacionalidad 
+                    </div>
+                    <div *ngif = "nacionalidad.errors.minlength || nacionalidad.errors.maxlength">
+                        La nacionalidad tiene un tamaño incorrecto 
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="religion">Religion : </label>
+                <input type="text" class="form-control" name="religion" id="religion" [(ngModel)] = "artista.religion" required minlength="4" maxlength="60" #religion = "ngModel">
+                <div class="alert alert-danger" *ngif="religion.invalid && (nacionalidad.dirty || religion.touched)">
+                    <div *ngif = "religion.errors.required">
+                        Digite la nacionalidad 
+                    </div>
+                    <div *ngif = "religion.errors.minlength || religionerrors.maxlength">
+                        La nacionalidad tiene un tamaño incorrecto 
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha_nac">Fecha de Nacimiento : </label>
+                <input type="date" class="form-control" name="fecha_nac" id="fecha_nac" [(ngModel)] = "artista.fecha_nac" required #fecha_nac = "ngModel">
+            </div>
+        </div>
+
+        <button class="btn btn-success m-3" [disabled] = "!artistaForm.form.valid">Guardar</button>
+        <button (click)= "regresar()"class="btn btn-danger" type="submit">Cancelar</button>
+
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<h2>Lista Artistas</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Nacionalidad</th>
+            <th>Religion</th>
+            <th>Fecha Nacimiento</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let artista of artistas">
+            <td>{{artista.nombre}}</td>
+            <td>{{artista.nacionalidad}}</td>
+            <td>{{artista.religion}}</td>
+            <td>{{artista.fecha_nac}}</td>
+            <td>
+                <button (click)= "editarArtista(artista.id)"class="btn btn-primary" type="submit">Actualizar</button>
+            </td>
+            <td>
+                <button (click)= "eliminarArtista(artista.id)"class="btn btn-danger" type="submit">Eliminar</button>
+            </td>
+            <td>
+                <button (click)= "informacionArtista(artista.id)"class="btn btn-secondary" type="submit">More</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
